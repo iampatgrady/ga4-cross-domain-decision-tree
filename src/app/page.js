@@ -46,7 +46,6 @@ export default function Home() {
                     {strategyDetails[strategy] && (
                         <div className="strategy-details">
                             <h2>{strategyDetails[strategy].title}</h2>
-                            <Markdown>{strategyDetails[strategy].description}</Markdown>
                         </div>
                     )}
                 </div>

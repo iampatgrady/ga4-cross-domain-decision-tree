@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
@@ -43,7 +43,9 @@ body {
 /* Container Styles */
 .container {
   background-color: var(--color-bright-white);
-  padding: 2rem;
+  /* padding: 2rem; */
+  padding-left: 2rem;
+  padding-right: 2rem;
   border-radius: var(--border-radius);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-width: 800px;
@@ -94,7 +96,7 @@ h1 { /* Display Heading */
 }
 
 .answers button:hover {
-  background-color: var(--color-lively-blue); /* Or any color you want on hover */
+  background-color: var(--color-fearless-pink); /* Or any color you want on hover */
   color: var(--color-bright-white); /* Ensuring text is readable */
 }
 
@@ -186,12 +188,13 @@ h1 { /* Display Heading */
   cursor: pointer;
   font-weight: var(--font-weight-semibold);
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease, border-color var(--transition-duration) ease;
+  background-color: var(--color-sunny-yellow);
 }
 
 .reset-button:hover {
-  background-color: var(--color-light-gray-1); /* Lighten background on hover */
-  color: var(--color-deep-graphite);
-  border-color: var(--color-deep-graphite);
+  background-color: var(--color-deep-graphite); /* Lighten background on hover */
+  color: var(--color-sunny-yellow);
+  border-color: var(--color-sunny-yellow);
 }
 
 
