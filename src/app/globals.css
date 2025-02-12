@@ -1,21 +1,263 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* src/app/globals.css */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Color Palette */
+  --color-fearless-pink: #FF00CE;
+  --color-sunny-yellow: #EEE707;
+  --color-bright-white: #FFFFFF;
+  --color-smart-plum: #653D62;
+  --color-deep-graphite: #353535;
+
+  --color-cloud-white: #f9f9f9;
+  --color-light-gray-1: #d3d3d3;
+  --color-light-gray-2: #848484;
+
+
+  --color-bold-tangerine: #FF8324;
+  --color-lively-blue: #2EC5FF;
+
+  /* Typography */
+  --font-family: 'Work Sans', sans-serif; /* Directly set the font family here */
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Component-Specific Variables (Optional, but helpful) */
+  --border-radius: 4px;  /* Use for consistent rounded corners */
+  --transition-duration: 0.2s; /* Consistent transition speed */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* General Styles (Apply to Light and Dark Mode) */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family); /* Apply globally */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+}
+
+
+/* Container Styles */
+.container {
+  background-color: var(--color-bright-white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 90%;
+  transition: background-color var(--transition-duration) ease, border-color var(--transition-duration) ease; /* Add border transition */
+
+}
+
+/* Typography Styles */
+h1 { /* Display Heading */
+  font-size: 2rem;
+  font-weight: var(--font-weight-light);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: color var(--transition-duration) ease; /* Add color transition */
+}
+
+
+/* Question Styles */
+.question {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 2rem;
+}
+
+.question h2 { /* Question Heading (Subhead) */
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 1rem;
+  transition: color var(--transition-duration) ease; /* Add color transition */
+}
+
+
+
+/* Answers (Buttons) */
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.answers button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease, border-color var(--transition-duration) ease;
+}
+
+
+
+/* Results Section */
+.result {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--color-light-gray-1);
+  border-radius: var(--border-radius);
+  background-color: var(--color-bright-white);
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease, border-color var(--transition-duration) ease;
+}
+
+.result h2 { /* Result Heading */
+  font-weight: var(--font-weight-semibold);
+  margin-top: 0;
+  transition: color var(--transition-duration) ease;
+}
+
+
+.result p { /* Result Text */
+  font-weight: var(--font-weight-medium);
+}
+
+
+
+/* Strategy Details */
+.strategy-details {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 1px solid var(--color-light-gray-1);
+  transition: border-color var(--transition-duration) ease;
+
+}
+
+
+.strategy-details h3 { /* Strategy Detail Heading */
+  font-weight: var(--font-weight-light);
+  transition: color var(--transition-duration) ease;
+
+}
+
+.strategy-details ul {
+  list-style: disc;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+
+.strategy-details li {
+  margin-bottom: 0.25rem;
+}
+
+
+.strategy-details strong {
+  font-weight: bold;
+}
+
+.strategy-details em {
+  font-style: italic;
+}
+
+.strategy-details a {
+  text-decoration: none;
+  transition: color var(--transition-duration) ease; /*Smooth color transitions for links*/
+}
+
+.strategy-details a:hover {
+  text-decoration: underline;
+}
+
+
+/* Result Header (h2 and Reset Button) */
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+
+/* Reset Button */
+.reset-button {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--color-deep-graphite); /* Default border */
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease, border-color var(--transition-duration) ease;
+}
+
+
+
+
+/* ========================= 
+   Dark Mode Styles
+   ========================= */
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: var(--color-deep-graphite);
+    color: var(--color-bright-white);
+  }
+
+  .container {
+    background-color: var(--color-deep-graphite);
+    border-color: var(--color-light-gray-2);
+  }
+
+  h1 {
+    color: var(--color-light-gray-1);
+  }
+
+  .question h2 {
+    color: var(--color-cloud-white);
+  }
+
+
+  .answers button {
+    background-color: var(--color-light-gray-2);
+    color: var(--color-bright-white);
+    border-color: var(--color-bright-white);
+  }
+
+  .answers button:hover {
+    background-color: var(--color-bold-tangerine);
+    color: var(--color-bright-white);
+    border-color: var(--color-bright-white);
+  }
+
+
+  .result {
+    background-color: var(--color-deep-graphite);
+    color: var(--color-bright-white);
+    border-color: var(--color-light-gray-2);
+  }
+
+
+  .result h2 {
+    color: var(--color-cloud-white);
+  }
+
+  .strategy-details {
+    border-color: var(--color-light-gray-2);
+  }
+
+  .strategy-details h3 {
+    color: var(--color-light-gray-1);
+  }
+
+
+  .strategy-details a {
+    color: var(--color-lively-blue);
+  }
+
+
+  .reset-button {
+    background-color: var(--color-light-gray-2);
+    color: var(--color-bright-white);
+    border-color: var(--color-bright-white);
+  }
+
+  .reset-button:hover {
+    background-color: var(--color-lively-blue);
+    color: var(--color-deep-graphite); /* high contrast on hover */
+    border-color: var(--color-bright-white);
+  }
 }
