@@ -27,7 +27,6 @@ export default function Home() {
 
     return (
         <main className="container">
-            <h1>Cross-Domain Strategy Guide</h1>
             {currentQuestionId && (
                 <Question
                     questionData={decisionTree[currentQuestionId]}
