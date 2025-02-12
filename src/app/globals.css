@@ -46,8 +46,8 @@ body {
   /* padding: 2rem; */
   padding-left: 2rem;
   padding-right: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   max-width: 800px;
   width: 90%;
   transition: background-color var(--transition-duration) ease, border-color var(--transition-duration) ease; /* Add border transition */
