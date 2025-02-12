@@ -93,6 +93,10 @@ h1 { /* Display Heading */
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease, border-color var(--transition-duration) ease;
 }
 
+.answers button:hover {
+  background-color: var(--color-lively-blue); /* Or any color you want on hover */
+  color: var(--color-bright-white); /* Ensuring text is readable */
+}
 
 
 /* Results Section */
@@ -184,6 +188,11 @@ h1 { /* Display Heading */
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease, border-color var(--transition-duration) ease;
 }
 
+.reset-button:hover {
+  background-color: var(--color-light-gray-1); /* Lighten background on hover */
+  color: var(--color-deep-graphite);
+  border-color: var(--color-deep-graphite);
+}
 
 
 
